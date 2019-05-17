@@ -1,0 +1,125 @@
+<html>
+
+<head>
+  <title>Digit Recognizer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./shared/tfjs-examples.css" />
+
+  <style>
+    #train {
+      margin-top: 10px;
+    }
+
+    label {
+      display: inline-block;
+      width: 250px;
+      padding: 6px 0 6px 0;
+    }
+
+    .title {
+      text-align : center;
+      background:    #f5e08aa1  ;
+      color:    #FF5733  ;
+      padding: 5px;
+      font-size: 30px;
+      width: 500px;
+      height: 70px;
+      margin: auto;
+      border-radius : 5px; 
+      font-weight: 600
+    }
+
+    .canvases {
+      display: none;
+      /* display: inline-block; */
+    }
+
+    .prediction-canvas {
+      width: 100px;
+    }
+
+    .pred {
+      font-size: 20px;
+      line-height: 25px;
+      width: 100px;
+    }
+
+    .pred-correct {
+      background-color: #00cf00;
+    }
+
+    .pred-incorrect {
+      background-color: red;
+    }
+
+    .pred-container {
+      display: inline-block;
+      width: 100px;
+      margin: 10px;
+    }
+     #train {
+       background: #50cc57;
+       color :#1c640e;
+     }
+  </style>
+</head>
+
+<body>
+  <div class="tfjs-example-container">
+    <div class='title'>
+      <p style="line-height: .5em">Digit Recognizer</p>
+    </div>
+
+    <div >
+    <section>
+      <p class='section-head'>Training Parameters</p>
+      <div>
+        <label>Model Type:</label>
+        <select id="model-type">
+          <option>ConvNet</option>
+          <!-- <option>DenseNet</option> -->
+        </select>
+      </div>
+
+      <div style="display: none">
+        <label># of training epochs:</label>
+        <input id="train-epochs" value="3">
+      </div>
+
+      <button id="train">Load Data and Train Model</button>
+    </section>
+
+    <section>
+      <p class='section-head'>Training Status</p>
+      <p id="status"></p>
+      <p id="message"></p>
+
+      <div id="stats">
+        <div class="canvases">
+          <label id="loss-label"></label>
+          <div id="loss-canvas"></div>
+        </div>
+        <div class="canvases">
+          <label id="accuracy-label"></label>
+          <div id="accuracy-canvas"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+    <section>
+      <p class='section-head'>Predictions</p>
+      <div id="images"></div>
+    </section>
+
+
+  </div>
+
+  <!-- TODO(cais): Decide. DO NOT SUBMIT. -->
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+  <script src="index.js"></script>
+</body>
+
+</html>
